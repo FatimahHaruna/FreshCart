@@ -1,0 +1,8 @@
+FreshCart is a full-stack online grocery shopping platform for ordering fresh fruits and vegetables conveniently from home.
+The project is being built with the MERN stack (MongoDB, Express.js, React, and Node.js). 
+The backend provides RESTful APIs for authentication, products, categories, shopping carts, orders, payments, and user management.
+Main goals:
+-Provide customers with an easy way to browse and order fresh produce.
+-Allow customers to manage carts and track orders.
+-Provide administrators with tools to manage products, customers, and orders.
+-Build the project using clean, scalable, and maintainable software engineering practices.

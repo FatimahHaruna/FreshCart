@@ -1,0 +1,8 @@
+A Mongoose schema describes the structure and rules of the data your application wants to store
+A schema is essentially the blueprint for a document.
+Schema - defines the structure
+Model - lets your app interact with MongoDB
+ObjectId + ref - defines a relationship
+populate() - retrieves the related document
+process.exit(0) - successful termination
+process.exit(1) - stop the app because something went wrong
