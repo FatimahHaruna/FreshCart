@@ -7,9 +7,7 @@ const productSchema = new mongoose.Schema(
       category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
       image: { type: String, required: true, trim: true },
       stock: { type: Number, required: true, min: 0, default: 0 },
-      quantityperunit: { type: Number, min: 1 },
-      weight: { type: Number },
-      unit: { type: String, required: true, trim: true, enum: ['kg', 'g', 'bunch', 'piece', 'pack'] },
+      unitQuantity: { type: String, required: true },
       isAvailabe: { type: Boolean, default: true },
     },
     { timestamps: true }

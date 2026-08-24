@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
 const mongoose = require('mongoose');
 
 const Category = require('../models/category');
@@ -67,8 +68,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "apple.jpg",
                 stock: 100,
-                quantityperunit: 6,
-                unit: "pack",
+                unitQuantity: "6 per pack",
                 isAvailable: true
             },
             {
@@ -77,18 +77,16 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "banana.jpg",
                 stock: 100,
-                quantityperunit: 10,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
                 name: "Mango",
-                price: 3000,
+                price: 5000,
                 category: fruits._id,
                 image: "mango.jpg",
                 stock: 100,
-                quantityperunit: 6,
-                unit: "kg",
+                unitQuantity: "10 pieces",
                 isAvailable: true
             },
             {
@@ -97,8 +95,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "orange.jpg",
                 stock: 100,
-                quantityperunit: 20,
-                unit: "pack",
+                unitQuantity: "20 per pack",
                 isAvailable: true
             },
             {
@@ -107,8 +104,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "pineapple.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "piece",
+                unitQuantity: "1 piece",
                 isAvailable: true
             },
             {
@@ -117,8 +113,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "papaya.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "piece",
+                unitQuantity: "1 piece",
                 isAvailable: true
             },
             {
@@ -127,8 +122,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "grapes.jpg",
                 stock: 100,
-                weight: 500,
-                unit: "g",
+                unitQuantity: "500 g",
                 isAvailable: true
             },
             {
@@ -137,8 +131,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "strawberry.jpg",
                 stock: 100,
-                weight: 250,
-                unit: "g",
+                unitQuantity: "250 g",
                 isAvailable: true
             },
             {
@@ -147,8 +140,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "blueberry.jpg",
                 stock: 100,
-                weight: 250,
-                unit: "g",
+                unitQuantity: "250 g",
                 isAvailable: true
             },
             {
@@ -157,8 +149,7 @@ const databaseSeed = async () => {
                 category: fruits._id,
                 image: "pear.jpg",
                 stock: 100,
-                quantityperunit: 4,
-                unit: "pack",
+                unitQuantity: "4 per pack",
                 isAvailable: true
             },
         // Vegetables
@@ -168,8 +159,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "carrot.jpg",
                 stock: 100,
-                weight: 500,
-                unit: "g",
+                unitQuantity: "500 g",
                 isAvailable: true
             },
             {
@@ -178,8 +168,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "cabbage.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "piece",
+                unitQuantity: "1 piece",
                 isAvailable: true
             },
             {
@@ -188,8 +177,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "broccoli.jpg",
                 stock: 100,
-                weight: 1,
-                unit: "kg",
+                unitQuantity: "1 kg",
                 isAvailable: true
             },
             {
@@ -198,8 +186,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "tomato.jpg",
                 stock: 100,
-                weight: 3,
-                unit: "kg",
+                unitQuantity: "3 kg",
                 isAvailable: true
             },
             {
@@ -208,8 +195,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "cucumber.jpg",
                 stock: 100,
-                quantityperunit: 3,
-                unit: "piece",
+                unitQuantity: "3 pieces",
                 isAvailable: true
             },
             {
@@ -218,8 +204,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "bellpepper.jpg",
                 stock: 100,
-                quantityperunit: 6,
-                unit: "pack",
+                unitQuantity: "6 per pack",
                 isAvailable: true
             },
             {
@@ -228,8 +213,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "greenbeans.jpg",
                 stock: 100,
-                weight: 1,
-                unit: "kg",
+                unitQuantity: "1 kg",
                 isAvailable: true
             },
             {
@@ -238,8 +222,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "cauliflower.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "piece",
+                unitQuantity: "1 piece",
                 isAvailable: true
             },
             {
@@ -248,8 +231,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "zucchini.jpg",
                 stock: 100,
-                weight: 500,
-                unit: "g",
+                unitQuantity: "500 g",
                 isAvailable: true
             },
             {
@@ -258,8 +240,7 @@ const databaseSeed = async () => {
                 category: vegetables._id,
                 image: "eggplant.jpg",
                 stock: 100,
-                quantityperunit: 5,
-                unit: "piece",
+                unitQuantity: "5 pieces",
                 isAvailable: true
             },
         // Leafy Greens
@@ -269,8 +250,7 @@ const databaseSeed = async () => {
                 category: leafyGreens._id,
                 image: "spinach.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -279,8 +259,7 @@ const databaseSeed = async () => {
                 category: leafyGreens._id,
                 image: "lettuce.jpg",
                 stock: 100,
-                weight: 1,
-                unit: "kg",
+                unitQuantity: "1 kg",
                 isAvailable: true
             },
             {
@@ -289,8 +268,7 @@ const databaseSeed = async () => {
                 category: leafyGreens._id,
                 image: "kale.jpg",
                 stock: 100,
-                weight: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -299,8 +277,7 @@ const databaseSeed = async () => {
                 category: leafyGreens._id,
                 image: "waterleaf.jpg",
                 stock: 100,
-                weight: 1,
-                unit: "kg",
+                unitQuantity: "1 kg",
                 isAvailable: true
             },
             {
@@ -309,8 +286,7 @@ const databaseSeed = async () => {
                 category: leafyGreens._id,
                 image: "pumpkinleaves.jpg",
                 stock: 100,
-                weight: 1,
-                unit: "kg",
+                unitQuantity: "1 kg",
                 isAvailable: true
             },
         // Root Vegetables
@@ -320,8 +296,7 @@ const databaseSeed = async () => {
                 category: rootVegetables._id,
                 image: "potato.jpg",
                 stock: 100,
-                weight: 2,
-                unit: "kg",
+                unitQuantity: "2 kg",
                 isAvailable: true
             },
             {
@@ -330,8 +305,7 @@ const databaseSeed = async () => {
                 category: rootVegetables._id,
                 image: "sweet-potato.jpg",
                 stock: 100,
-                weight: 2,
-                unit: "kg",
+                unitQuantity: "2 kg",
                 isAvailable: true
             },
             {
@@ -340,8 +314,7 @@ const databaseSeed = async () => {
                 category: rootVegetables._id,
                 image: "beetroot.jpg",
                 stock: 100,
-                weight: 2,
-                unit: "kg",
+                unitQuantity: "2 kg",
                 isAvailable: true
             },
             {
@@ -350,8 +323,7 @@ const databaseSeed = async () => {
                 category: rootVegetables._id,
                 image: "cassava.jpg",
                 stock: 100,
-                weight: 2,
-                unit: "kg",
+                unitQuantity: "2 kg",
                 isAvailable: true
             },
             {
@@ -360,8 +332,7 @@ const databaseSeed = async () => {
                 category: rootVegetables._id,
                 image: "yam.jpg",
                 stock: 100,
-                weight: 2,
-                unit: "kg",
+                unitQuantity: "2 kg",
                 isAvailable: true
             },
             {
@@ -370,8 +341,7 @@ const databaseSeed = async () => {
                 category: rootVegetables._id,
                 image: "ginger.jpg",
                 stock: 100,
-                weight: 500,
-                unit: "g",
+                unitQuantity: "500 g",
                 isAvailable: true
             },
         // Herbs
@@ -381,8 +351,7 @@ const databaseSeed = async () => {
                 category: herbs._id,
                 image: "mint.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -391,8 +360,7 @@ const databaseSeed = async () => {
                 category: herbs._id,
                 image: "basil.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -401,8 +369,7 @@ const databaseSeed = async () => {
                 category: herbs._id,
                 image: "parsley.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -411,8 +378,7 @@ const databaseSeed = async () => {
                 category: herbs._id,
                 image: "cilantro.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -421,8 +387,7 @@ const databaseSeed = async () => {
                 category: herbs._id,
                 image: "rosemary.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
             {
@@ -431,8 +396,7 @@ const databaseSeed = async () => {
                 category: herbs._id,
                 image: "thyme.jpg",
                 stock: 100,
-                quantityperunit: 1,
-                unit: "bunch",
+                unitQuantity: "1 bunch",
                 isAvailable: true
             },
         ]);
@@ -450,3 +414,5 @@ const databaseSeed = async () => {
         process.exit(1);
     }
 }
+
+databaseSeed();
