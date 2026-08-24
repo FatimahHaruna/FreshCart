@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema(
       image: { type: String, required: true, trim: true },
       stock: { type: Number, required: true, min: 0, default: 0 },
       quantityperunit: { type: Number, min: 1 },
-      weight: { type: String },
+      weight: { type: Number },
       unit: { type: String, required: true, trim: true, enum: ['kg', 'g', 'bunch', 'piece', 'pack'] },
       isAvailabe: { type: Boolean, default: true },
     },
