@@ -164,11 +164,12 @@ const databaseSeed = async () => {
         // Vegetables
             {
                 name: "Carrot",
-                price: 1500,
+                price: 800,
                 category: vegetables._id,
                 image: "carrot.jpg",
-                stock: 50,
-                unit: "kg",
+                stock: 100,
+                weight: "500",
+                unit: "g",
                 isAvailable: true
             },
             {
@@ -176,7 +177,8 @@ const databaseSeed = async () => {
                 price: 1200,
                 category: vegetables._id,
                 image: "cabbage.jpg",
-                stock: 30,
+                stock: 100,
+                quantityperunit: 1,
                 unit: "piece",
                 isAvailable: true
             },
@@ -185,8 +187,79 @@ const databaseSeed = async () => {
                 price: 2500,
                 category: vegetables._id,
                 image: "broccoli.jpg",
-                stock: 25,
+                stock: 100,
+                weight: "1",
                 unit: "kg",
+                isAvailable: true
+            },
+            {
+                name: "Tomato",
+                price: 4000,
+                category: vegetables._id,
+                image: "tomato.jpg",
+                stock: 100,
+                weight: "3",
+                unit: "kg",
+                isAvailable: true
+            },
+            {
+                name: "Cucumber",
+                price: 4000,
+                category: vegetables._id,
+                image: "cucumber.jpg",
+                stock: 100,
+                quantityperunit: 3,
+                unit: "piece",
+                isAvailable: true
+            },
+            {
+                name: "Bell Pepper",
+                price: 4000,
+                category: vegetables._id,
+                image: "bellpepper.jpg",
+                stock: 100,
+                quantityperunit: 6,
+                unit: "pack",
+                isAvailable: true
+            },
+            {
+                name: "Green Beans",
+                price: 100,
+                category: vegetables._id,
+                image: "greenbeans.jpg",
+                stock: 100,
+                weight: "1",
+                unit: "kg",
+                isAvailable: true
+            },
+            {
+                name: "Cauliflower",
+                price: 3500,
+                category: vegetables._id,
+                image: "cauliflower.jpg",
+                stock: 100,
+                quantityperunit: 1,
+                unit: "piece",
+                isAvailable: true
+            },
+            {
+                name: "Zucchini",
+                price: 2000,
+                category: vegetables._id,
+                image: "zucchini.jpg",
+                stock: 100,
+                weight: "500",
+                unit: "g",
+                isAvailable: true
+            },
+            {
+                name: "Eggplant",
+                price: 2000,
+                category: vegetables._id,
+                image: "eggplant.jpg",
+                stock: 100,
+                quantityperunit: 5,
+                unit: "piece",
                 isAvailable: true
             },
         // Leafy Greens
@@ -278,10 +351,13 @@ const databaseSeed = async () => {
         console.log(`${products.length} products created.`);
         console.log('Database seeded successfully');
 
-        await mong
+        await mongoose.connection.close();
+        console.log('MongoDB connection closed');
 
     }
     catch(error) {
-
+        console.error('Error seeding database:', error.message);
+        await mongoose.connection.close();
+        process.exit(1);
     }
 }
