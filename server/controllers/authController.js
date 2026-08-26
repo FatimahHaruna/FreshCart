@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const registerUser = async (req, res) => {
-    console.log(req);
     try {
         const { userName, email, password, phoneNumber, addresses } = req.body;
         if(!userName || !email || !password || !phoneNumber || !addresses) {
@@ -14,7 +13,8 @@ const registerUser = async (req, res) => {
             return res.status(400).json({success: false, message: 'User with this email already exists!'});
         }
 
-        //Hashing password code here
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const user = await User.create({ userName, email, password: hashedPassword, phoneNumber, addresses });
         res.status(201).json({success: true, message: 'User registered successfully!', user: {
             id: user._id, name: user.userName, email: user.email, phone: user.phoneNumber, address: user.address
@@ -37,7 +37,10 @@ const loginUser = async (req, res) => {
             return res.status(401).json({success: false, message: 'User not found!'});
         }
 
-        //Compare password
+        const isPassword = await bcrypt.compare(password, user.password);
+        if(!isPassword) {
+            return res.status(401).json({success: false, message: 'Invalid email or password!'});
+        }
         //Create jwt
     }
     catch(error) {
@@ -53,5 +56,3 @@ const getUserProfile = async (req, res) => {
 const updateUserProfile = async (req, res) => {
 
 };
-
-registerUser();
