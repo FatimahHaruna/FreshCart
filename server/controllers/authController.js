@@ -102,5 +102,6 @@ const updateUserProfile = async (req, res) => {
     }
 };
 
+//Add functionality for reset password later
 
 module.exports = { registerUser, loginUser, getUserProfile, updateUserProfile };
