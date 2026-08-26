@@ -26,6 +26,23 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if(!email || !password) {
+            return res.status(400).json({success: false, message: 'Email and password are required'});
+        }
+
+        const user = await User.findOne({ email });
+        if(!user) {
+            return res.status(401).json({success: false, message: 'User not found!'});
+        }
+
+        //Compare password
+        //Create jwt
+    }
+    catch(error) {
+        res.status(500).json({success: false, message: 'Failed to log in User.', error: error.message})
+    }
 
 };
 
