@@ -6,6 +6,7 @@ const productRoutes = require('./routes/productRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
+const errorHandler = require('./middlewares/errorMiddleware');
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use('/freshcart/products', productRoutes);
 app.use('/freshcart/category', categoryRoutes);
 app.use('', cartRoutes);
 app.use('', orderRoutes);
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
