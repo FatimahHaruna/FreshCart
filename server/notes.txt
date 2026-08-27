@@ -8,3 +8,4 @@ process.exit(0) - successful termination
 process.exit(1) - stop the app because something went wrong
 bcrypt → protects the PASSWORD
 JWT    → proves the USER IS LOGGED IN
+auth middleware - gets the jwt from request, verify it, identify the user then allow the request to continue.
