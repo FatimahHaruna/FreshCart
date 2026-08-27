@@ -1,29 +1,29 @@
 const Order = require('../models/order');
 
-const createOrder = async (req, res) => {
+const createOrder = async (req, res, next) => {
     try {
 
     }
     catch(error) {
-
+        next(error);
     }
 };
 
-const getMyOrders = async (req, res) => {
+const getMyOrders = async (req, res, next) => {
     try {
 
     }
     catch(error) {
-        
+        next(error);
     }
 };
 
-const getOrderById = async (req, res) => {
+const getOrderById = async (req, res, next) => {
     try {
 
     }
     catch(error) {
-        
+        next(error);
     }
 };
 

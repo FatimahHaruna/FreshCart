@@ -10,7 +10,7 @@ function validatePassword(password) {
     return null;
 }
 
-const registerUser = async (req, res) => {
+const registerUser = async (req, res, next) => {
     try {
         const { userName, email, password, phoneNumber, addresses } = req.body;
         if(!userName || !email || !password) {
@@ -34,11 +34,11 @@ const registerUser = async (req, res) => {
         }});
     }
     catch(error) {
-        res.status(500).json({success: false, message: 'Failed to register user.', error: error.message});
+        next(error);
     }
 };
 
-const loginUser = async (req, res) => {
+const loginUser = async (req, res, next) => {
     try {
         const { email, password } = req.body;
         if(!email || !password) {
@@ -61,12 +61,12 @@ const loginUser = async (req, res) => {
         }});
     }
     catch(error) {
-        res.status(500).json({success: false, message: 'Failed to log in User.', error: error.message});
+        next(error);
     }
 
 };
 
-const getUserProfile = async (req, res) => {
+const getUserProfile = async (req, res, next) => {
     try {
         const user = await User.findById(req.user.userId).select('-password');
         if(!user) {
@@ -75,11 +75,11 @@ const getUserProfile = async (req, res) => {
         res.status(200).json({success: true, user});
     }
     catch(error) {
-        res.status(500).json({success: false, message: 'Failed to get user profile.', error: error.message});
+        next(error);
     }
 };
 
-const updateUserProfile = async (req, res) => {
+const updateUserProfile = async (req, res, next) => {
     try {
         const {name, phoneNumber, addresses} = req.body;
         
@@ -98,7 +98,7 @@ const updateUserProfile = async (req, res) => {
         }});
     }
     catch(error) {
-        res.status(500).json({success: false, message: 'Failed', error: error.message});
+        next(error);
     }
 };
 
