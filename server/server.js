@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.use('/freshcart', userRoutes);
 app.use('/freshcart/products', productRoutes);
 app.use('/freshcart/category', categoryRoutes);
-app.use('', cartRoutes);
+app.use('/freshcart/cart', cartRoutes);
 app.use('', orderRoutes);
 
 app.use(errorHandler);
