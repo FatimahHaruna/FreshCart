@@ -21,7 +21,7 @@ app.use('/freshcart', userRoutes);
 app.use('/freshcart/products', productRoutes);
 app.use('/freshcart/category', categoryRoutes);
 app.use('/freshcart/cart', cartRoutes);
-app.use('', orderRoutes);
+app.use('/freshcart/orders', orderRoutes);
 
 app.use(errorHandler);
 
