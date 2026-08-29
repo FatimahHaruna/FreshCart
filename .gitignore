@@ -1,3 +1,4 @@
 node_modules/
 server/.env
-testing/
+server/notes.txt
+freshcart.txt
