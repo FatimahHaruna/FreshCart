@@ -1,6 +1,15 @@
+import Navbar from "./components/Navbar";
+import ProductCard from "./components/ProductCard";
 
 function App () {
-  return <h1>Welcome to freshCart</h1>
+  return (
+    <div>
+      <Navbar />
+      <ProductCard name='Apple' price={2500} />
+      <ProductCard name='Banana' price={1500} />
+    </div>
+     
+  )
 }
 
 export default App
