@@ -1,22 +1,30 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const protect = (req, res, next) => {
-    try {
-        const authHeader = req.headers.authorization;
-        if(!authHeader || !authHeader.startsWith('Bearer')) {
-            return res.status(401).json({success: false, message: 'Not authorized! No token provided!'});
-        }
-        const token = authHeader.split(" ")[1];
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = {userId: decoded.userId};
-        if(!req.user) {
-            return res.status(404).json({success: false, message: 'User not found!'});
-        }
-        next();
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer")) {
+      return res
+        .status(401)
+        .json({
+          success: false,
+          message: "Not authorized! No token provided!",
+        });
     }
-    catch(error) {
-        return res.status(401).json({success: false, message: 'Not authorized! No token provided!'});
+    const token = authHeader.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = { userId: decoded.userId };
+    if (!req.user) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found!" });
     }
-}
+    next();
+  } catch (error) {
+    return res
+      .status(401)
+      .json({ success: false, message: "Not authorized! No token provided!" });
+  }
+};
 
 module.exports = protect;
