@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/authRoutes');
@@ -9,6 +10,8 @@ const orderRoutes = require('./routes/orderRoutes');
 const errorHandler = require('./middlewares/errorMiddleware');
 
 const app = express();
+
+app.use('/products', express.static(path.join(__dirname, 'src/products')));
 
 connectDB();
 

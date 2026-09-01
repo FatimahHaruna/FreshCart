@@ -18,27 +18,27 @@ const databaseSeed = async () => {
             {
                 name: "Fruits",
                 description: "Fresh and healthy fruits",
-                image:"fruits.jpg"
+                image:"/products/fruits/fruits.webp"
             },
             {
                 name: "Vegetables",
                 description: "Fresh vegetables for everyday meals",
-                image: "vegetables.jpg"
+                image: "/products/vegetables/vegetables.webp"
             },
             {
                 name: "Leafy Greens",
                 description: "Fresh leafy green vegetables",
-                image: "leafy-greens.jpg"
+                image: "/products/leafygreens/leafy-greens.webp"
             },
             {
                 name: "Root Vegetables",
                 description: "Fresh and nutritious root vegetables",
-                image: "root-vegetables.jpg"
+                image: "/products/rootvegetables/root-vegetables.webp"
             },
             {
                 name: "Herbs",
                 description: "Fresh herbs for cooking and seasoning",
-                image: "Herbs.jpg"
+                image: "/products/herbs/herbs.webp"
             }
         ]);
 
@@ -66,7 +66,7 @@ const databaseSeed = async () => {
                 name: "Apple",
                 price: 3600,
                 category: fruits._id,
-                image: "apple.jpg",
+                image: "/products/fruits/apple.webp",
                 stock: 100,
                 unitQuantity: "6 per pack",
                 isAvailable: true
@@ -75,7 +75,7 @@ const databaseSeed = async () => {
                 name: "Banana",
                 price: 4000,
                 category: fruits._id,
-                image: "banana.jpg",
+                image: "/products/fruits/banana.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -84,7 +84,7 @@ const databaseSeed = async () => {
                 name: "Mango",
                 price: 5000,
                 category: fruits._id,
-                image: "mango.jpg",
+                image: "/products/fruits/mango.webp",
                 stock: 100,
                 unitQuantity: "10 pieces",
                 isAvailable: true
@@ -93,7 +93,7 @@ const databaseSeed = async () => {
                 name: "Orange",
                 price: 3000,
                 category: fruits._id,
-                image: "orange.jpg",
+                image: "/products/fruits/orange.webp",
                 stock: 100,
                 unitQuantity: "20 per pack",
                 isAvailable: true
@@ -102,7 +102,7 @@ const databaseSeed = async () => {
                 name: "Pineapple",
                 price: 1500,
                 category: fruits._id,
-                image: "pineapple.jpg",
+                image: "/products/fruits/pineapple.webp",
                 stock: 100,
                 unitQuantity: "1 piece",
                 isAvailable: true
@@ -111,7 +111,7 @@ const databaseSeed = async () => {
                 name: "Papaya",
                 price: 1000,
                 category: fruits._id,
-                image: "papaya.jpg",
+                image: "/products/fruits/papaya.webp",
                 stock: 100,
                 unitQuantity: "1 piece",
                 isAvailable: true
@@ -120,7 +120,7 @@ const databaseSeed = async () => {
                 name: "Grapes",
                 price: 4500,
                 category: fruits._id,
-                image: "grapes.jpg",
+                image: "/products/fruits/grapes.webp",
                 stock: 100,
                 unitQuantity: "500 g",
                 isAvailable: true
@@ -129,7 +129,7 @@ const databaseSeed = async () => {
                 name: "Strawberry",
                 price: 5000,
                 category: fruits._id,
-                image: "strawberry.jpg",
+                image: "/products/fruits/strawberry.webp",
                 stock: 100,
                 unitQuantity: "250 g",
                 isAvailable: true
@@ -138,7 +138,7 @@ const databaseSeed = async () => {
                 name: "Blueberry",
                 price: 5000,
                 category: fruits._id,
-                image: "blueberry.jpg",
+                image: "/products/fruits/blueberry.webp",
                 stock: 100,
                 unitQuantity: "250 g",
                 isAvailable: true
@@ -147,7 +147,7 @@ const databaseSeed = async () => {
                 name: "Pear",
                 price: 3000,
                 category: fruits._id,
-                image: "pear.jpg",
+                image: "/products/fruits/pear.webp",
                 stock: 100,
                 unitQuantity: "4 per pack",
                 isAvailable: true
@@ -157,7 +157,7 @@ const databaseSeed = async () => {
                 name: "Carrot",
                 price: 800,
                 category: vegetables._id,
-                image: "carrot.jpg",
+                image: "/products/vegetables/carrot.webp",
                 stock: 100,
                 unitQuantity: "500 g",
                 isAvailable: true
@@ -166,7 +166,7 @@ const databaseSeed = async () => {
                 name: "Cabbage",
                 price: 1200,
                 category: vegetables._id,
-                image: "cabbage.jpg",
+                image: "/products/vegetables/cabbage.webp",
                 stock: 100,
                 unitQuantity: "1 piece",
                 isAvailable: true
@@ -175,7 +175,7 @@ const databaseSeed = async () => {
                 name: "Broccoli",
                 price: 2500,
                 category: vegetables._id,
-                image: "broccoli.jpg",
+                image: "/products/vegetables/broccoli.webp",
                 stock: 100,
                 unitQuantity: "1 kg",
                 isAvailable: true
@@ -184,7 +184,7 @@ const databaseSeed = async () => {
                 name: "Tomato",
                 price: 4000,
                 category: vegetables._id,
-                image: "tomato.jpg",
+                image: "/products/vegetables/tomato.webp",
                 stock: 100,
                 unitQuantity: "3 kg",
                 isAvailable: true
@@ -193,7 +193,7 @@ const databaseSeed = async () => {
                 name: "Cucumber",
                 price: 4000,
                 category: vegetables._id,
-                image: "cucumber.jpg",
+                image: "/products/vegetables/cucumber.webp",
                 stock: 100,
                 unitQuantity: "3 pieces",
                 isAvailable: true
@@ -202,7 +202,7 @@ const databaseSeed = async () => {
                 name: "Bell Pepper",
                 price: 4000,
                 category: vegetables._id,
-                image: "bellpepper.jpg",
+                image: "/products/vegetables/bellpepper.webp",
                 stock: 100,
                 unitQuantity: "6 per pack",
                 isAvailable: true
@@ -211,7 +211,7 @@ const databaseSeed = async () => {
                 name: "Green Beans",
                 price: 100,
                 category: vegetables._id,
-                image: "greenbeans.jpg",
+                image: "/products/vegetables/greenbeans.webp",
                 stock: 100,
                 unitQuantity: "1 kg",
                 isAvailable: true
@@ -220,7 +220,7 @@ const databaseSeed = async () => {
                 name: "Cauliflower",
                 price: 3500,
                 category: vegetables._id,
-                image: "cauliflower.jpg",
+                image: "/products/vegetables/cauliflower.webp",
                 stock: 100,
                 unitQuantity: "1 piece",
                 isAvailable: true
@@ -229,7 +229,7 @@ const databaseSeed = async () => {
                 name: "Zucchini",
                 price: 2000,
                 category: vegetables._id,
-                image: "zucchini.jpg",
+                image: "/products/vegetables/zucchini.webp",
                 stock: 100,
                 unitQuantity: "500 g",
                 isAvailable: true
@@ -238,7 +238,7 @@ const databaseSeed = async () => {
                 name: "Eggplant",
                 price: 2000,
                 category: vegetables._id,
-                image: "eggplant.jpg",
+                image: "/products/vegetables/eggplant.webp",
                 stock: 100,
                 unitQuantity: "5 pieces",
                 isAvailable: true
@@ -248,7 +248,7 @@ const databaseSeed = async () => {
                 name: "Spinach",
                 price: 1000,
                 category: leafyGreens._id,
-                image: "spinach.jpg",
+                image: "/products/leafygreens/spinach.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -257,7 +257,7 @@ const databaseSeed = async () => {
                 name: "Lettuce",
                 price: 1200,
                 category: leafyGreens._id,
-                image: "lettuce.jpg",
+                image: "/products/leafygreens/lettuce.webp",
                 stock: 100,
                 unitQuantity: "1 kg",
                 isAvailable: true
@@ -266,7 +266,7 @@ const databaseSeed = async () => {
                 name: "Kale",
                 price: 1500,
                 category: leafyGreens._id,
-                image: "kale.jpg",
+                image: "/products/leafygreens/kale.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -275,7 +275,7 @@ const databaseSeed = async () => {
                 name: "Waterleaf",
                 price: 1200,
                 category: leafyGreens._id,
-                image: "waterleaf.jpg",
+                image: "/products/leafygreens/waterleaf.webp",
                 stock: 100,
                 unitQuantity: "1 kg",
                 isAvailable: true
@@ -284,7 +284,7 @@ const databaseSeed = async () => {
                 name: "Pumpkin leaves",
                 price: 1000,
                 category: leafyGreens._id,
-                image: "pumpkinleaves.jpg",
+                image: "/products/leafygreens/pumpkinleaves.webp",
                 stock: 100,
                 unitQuantity: "1 kg",
                 isAvailable: true
@@ -294,7 +294,7 @@ const databaseSeed = async () => {
                 name: "Potato",
                 price: 5000,
                 category: rootVegetables._id,
-                image: "potato.jpg",
+                image: "/products/rootvegetables/potato.webp",
                 stock: 100,
                 unitQuantity: "2 kg",
                 isAvailable: true
@@ -303,7 +303,7 @@ const databaseSeed = async () => {
                 name: "Sweet Potato",
                 price: 3000,
                 category: rootVegetables._id,
-                image: "sweet-potato.jpg",
+                image: "/products/rootvegetables/sweet-potato.webp",
                 stock: 100,
                 unitQuantity: "2 kg",
                 isAvailable: true
@@ -312,7 +312,7 @@ const databaseSeed = async () => {
                 name: "Beetroot",
                 price: 2000,
                 category: rootVegetables._id,
-                image: "beetroot.jpg",
+                image: "/products/rootvegetables/beetroot.webp",
                 stock: 100,
                 unitQuantity: "2 kg",
                 isAvailable: true
@@ -321,7 +321,7 @@ const databaseSeed = async () => {
                 name: "Cassava",
                 price: 4000,
                 category: rootVegetables._id,
-                image: "cassava.jpg",
+                image: "/products/rootvegetables/cassava.webp",
                 stock: 100,
                 unitQuantity: "2 kg",
                 isAvailable: true
@@ -330,7 +330,7 @@ const databaseSeed = async () => {
                 name: "Yam",
                 price: 7000,
                 category: rootVegetables._id,
-                image: "yam.jpg",
+                image: "/products/rootvegetables/yam.webp",
                 stock: 100,
                 unitQuantity: "2 kg",
                 isAvailable: true
@@ -339,7 +339,7 @@ const databaseSeed = async () => {
                 name: "Ginger",
                 price: 1500,
                 category: rootVegetables._id,
-                image: "ginger.jpg",
+                image: "/products/rootvegetables/ginger.webp",
                 stock: 100,
                 unitQuantity: "500 g",
                 isAvailable: true
@@ -349,7 +349,7 @@ const databaseSeed = async () => {
                 name: "Mint",
                 price: 800,
                 category: herbs._id,
-                image: "mint.jpg",
+                image: "/products/herbs/mint.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -358,7 +358,7 @@ const databaseSeed = async () => {
                 name: "Basil",
                 price: 1000,
                 category: herbs._id,
-                image: "basil.jpg",
+                image: "/products/herbs/basil.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -367,7 +367,7 @@ const databaseSeed = async () => {
                 name: "Parsley",
                 price: 800,
                 category: herbs._id,
-                image: "parsley.jpg",
+                image: "/products/herbs/parsley.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -376,7 +376,7 @@ const databaseSeed = async () => {
                 name: "Cilantro",
                 price: 1000,
                 category: herbs._id,
-                image: "cilantro.jpg",
+                image: "/products/herbs/cilantro.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -385,7 +385,7 @@ const databaseSeed = async () => {
                 name: "Rosemary",
                 price: 800,
                 category: herbs._id,
-                image: "rosemary.jpg",
+                image: "/products/herbs/rosemary.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
@@ -394,7 +394,7 @@ const databaseSeed = async () => {
                 name: "Thyme",
                 price: 1000,
                 category: herbs._id,
-                image: "thyme.jpg",
+                image: "/products/herbs/thyme.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true
