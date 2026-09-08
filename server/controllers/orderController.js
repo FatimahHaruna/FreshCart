@@ -3,15 +3,22 @@ const Cart = require('../models/cart');
 
 const createOrder = async (req, res, next) => {
     try {
-        const {shippingAddress} = req.body;
-        if(!shippingAddress) {
-            return res.status(400).json({success: false, message: 'Shipping address required.'})
+        const { shippingAddress } = req.body;
+
+        if (!shippingAddress) {
+            return res.status(400).json({
+                success: false,
+                message: 'Shipping address required.'
+            });
         }
 
-        const cart = await Cart.findOne({user: req.user.userId}).populate('items.product');
+        const cart = await Cart.findOne({ user: req.user.userId }).populate('items.product');
 
-        if(!cart || cart.items.length === 0) {
-            return res.status(400).json({success: false, message: 'Your cart is empty.'});
+        if (!cart || cart.items.length === 0) {
+            return res.status(400).json({
+                success: false,
+                message: 'Your cart is empty.'
+            });
         }
 
         const orderItems = cart.items.map(item => ({
@@ -28,41 +35,63 @@ const createOrder = async (req, res, next) => {
             user: req.user.userId,
             items: orderItems,
             totalAmount,
-            shippingAdress: shippingAddress
+            shippingAdress: Array.isArray(shippingAddress)
+                ? shippingAddress
+                : [shippingAddress]
         });
 
         cart.items = [];
         await cart.save();
 
-        res.status(201).json({success: true, message: 'Order created successfully.', order});
-    }
-    catch(error) {
+        return res.status(201).json({
+            success: true,
+            message: 'Order created successfully.',
+            order
+        });
+    } catch (error) {
         next(error);
     }
 };
 
 const getMyOrders = async (req, res, next) => {
     try {
-        const orders = await Order.find({user: req.user.userId}).populate('items.product');
-        res.status(200).json({success: true, count: orders.length, orders});
-    }
-    catch(error) {
+        const orders = await Order.find({ user: req.user.userId }).populate('items.product');
+
+        return res.status(200).json({
+            success: true,
+            count: orders.length,
+            orders
+        });
+    } catch (error) {
         next(error);
     }
 };
 
 const getOrderById = async (req, res, next) => {
     try {
-        const order = await Order.findOne({ _id: req.params.id, user: req.user.userId}).populate('items.product');
+        const order = await Order.findOne({
+            _id: req.params.id,
+            user: req.user.userId
+        }).populate('items.product');
 
-        if(!order) {
-            return res.status(404).json({success: false, message: 'Order not found.'});
+        if (!order) {
+            return res.status(404).json({
+                success: false,
+                message: 'Order not found.'
+            });
         }
-        res.status(200).json({success: true, order});
-    }
-    catch(error) {
+
+        return res.status(200).json({
+            success: true,
+            order
+        });
+    } catch (error) {
         next(error);
     }
 };
 
-module.exports = { createOrder, getMyOrders, getOrderById };
+module.exports = {
+    createOrder,
+    getMyOrders,
+    getOrderById
+};
