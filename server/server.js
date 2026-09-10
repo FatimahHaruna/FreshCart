@@ -12,10 +12,14 @@ const errorHandler = require('./middlewares/errorMiddleware');
 const app = express();
 
 app.use('/products', express.static(path.join(__dirname, 'src/products')));
+app.use('/categories', express.static(path.join(__dirname, 'src/categories')));
 
 connectDB();
 
 app.use(express.json());
+
+//Displaying images on the express server
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.send('Home Page!')

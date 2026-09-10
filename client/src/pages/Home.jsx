@@ -80,7 +80,7 @@ const Home = () => {
             category={{
               _id: "fruits",
               name: "Fruits",
-              image: "/images/fruits.jpg",
+              image: "/categories/fruits.webp",
             }}
           />
 
@@ -88,7 +88,7 @@ const Home = () => {
             category={{
               _id: "vegetables",
               name: "Vegetables",
-              image: "/images/vegetables.jpg",
+              image: "/categories/vegetables.webp",
             }}
           />
 
@@ -96,7 +96,7 @@ const Home = () => {
             category={{
               _id: "leafy-greens",
               name: "Leafy Greens",
-              image: "/images/leafy-greens.jpg",
+              image: "/categories/leafygreens.webp",
             }}
           />
 

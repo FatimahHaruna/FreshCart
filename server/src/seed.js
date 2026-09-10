@@ -18,27 +18,27 @@ const databaseSeed = async () => {
             {
                 name: "Fruits",
                 description: "Fresh and healthy fruits",
-                image:"/products/fruits/fruits.webp"
+                image:"/categories/fruits.webp"
             },
             {
                 name: "Vegetables",
                 description: "Fresh vegetables for everyday meals",
-                image: "/products/vegetables/vegetables.webp"
+                image: "/categories/vegetables.webp"
             },
             {
                 name: "Leafy Greens",
                 description: "Fresh leafy green vegetables",
-                image: "/products/leafygreens/leafy-greens.webp"
+                image: "/categories/leafygreens.webp"
             },
             {
                 name: "Root Vegetables",
                 description: "Fresh and nutritious root vegetables",
-                image: "/products/rootvegetables/root-vegetables.webp"
+                image: "/categories/rootvegetables.webp"
             },
             {
                 name: "Herbs",
                 description: "Fresh herbs for cooking and seasoning",
-                image: "/products/herbs/herbs.webp"
+                image: "/categories/herbs.webp"
             }
         ]);
 
@@ -303,7 +303,7 @@ const databaseSeed = async () => {
                 name: "Sweet Potato",
                 price: 3000,
                 category: rootVegetables._id,
-                image: "/products/rootvegetables/sweet-potato.webp",
+                image: "/products/rootvegetables/sweetpotato.webp",
                 stock: 100,
                 unitQuantity: "2 kg",
                 isAvailable: true
@@ -386,15 +386,6 @@ const databaseSeed = async () => {
                 price: 800,
                 category: herbs._id,
                 image: "/products/herbs/rosemary.webp",
-                stock: 100,
-                unitQuantity: "1 bunch",
-                isAvailable: true
-            },
-            {
-                name: "Thyme",
-                price: 1000,
-                category: herbs._id,
-                image: "/products/herbs/thyme.webp",
                 stock: 100,
                 unitQuantity: "1 bunch",
                 isAvailable: true

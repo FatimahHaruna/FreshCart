@@ -4,27 +4,27 @@ const categories = [
   {
     _id: "fruits",
     name: "Fruits",
-    image: "/images/fruits.jpg",
+    image: "/categories/fruits.webp",
   },
   {
     _id: "vegetables",
     name: "Vegetables",
-    image: "/images/vegetables.jpg",
+    image: "/categories/vegetables.webp",
   },
   {
     _id: "leafy-greens",
     name: "Leafy Greens",
-    image: "/images/leafy-greens.jpg",
+    image: "/categories/leafygreens.webp",
   },
   {
     _id: "root-vegetables",
     name: "Root Vegetables",
-    image: "/images/root-vegetables.jpg",
+    image: "/categories/rootvegetables.webp",
   },
   {
     _id: "herbs-spices",
     name: "Herbs & Spices",
-    image: "/images/herbs.jpg",
+    image: "/categories/herbs.webp",
   },
 ];
 
