@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Loading from "../components/Loading";
 
-import { getProducts } from "../services/productService";
+import { getAllProducts } from "../services/productService";
 
 const Products = () => {
 
@@ -16,7 +16,7 @@ const Products = () => {
 
       try {
 
-        const data = await getProducts();
+        const data = await getAllProducts();
 
         setProducts(data.products || data);
 

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { AuthProvider } from "./context/AuthContext";
-import { CartProvider } from "./context/CartContext";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 import MainLayout from "./layouts/MainLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ResetPassword from "./pages/ResetPassword";
 import Orders from "./pages/Orders";
 import OrderDetails from "./pages/OrderDetails";
 import NotFound from "./pages/NotFound";
@@ -57,6 +58,11 @@ function App() {
               <Route
                 path="/register"
                 element={<Register />}
+              />
+
+              <Route
+                path="/reset-password"
+                element={<ResetPassword />}
               />
 
               <Route

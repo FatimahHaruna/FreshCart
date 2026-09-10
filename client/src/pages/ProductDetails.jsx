@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getProduct } from "../services/productService";
+import { getProductById } from "../services/productService";
 import { useCart } from "../context/CartContext";
 import { formatCurrency } from "../utils/formatCurrency";
 import Loading from "../components/Loading";
@@ -22,7 +22,7 @@ const ProductDetails = () => {
 
       try {
 
-        const data = await getProduct(id);
+        const data = await getProductById(id);
 
         setProduct(data.product || data);
 

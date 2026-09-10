@@ -92,6 +92,13 @@ const Login = () => {
         </button>
 
         <p>
+          Forgot your password?{" "}
+          <Link to="/reset-password">
+            Reset it
+          </Link>
+        </p>
+
+        <p>
           Don't have an account?{" "}
           <Link to="/register">
             Sign up

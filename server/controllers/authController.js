@@ -189,9 +189,28 @@ const resetPassword = async (req, res, next) => {
             });
         }
 
+        const pwdError = validatePassword(newPassword);
+        if (pwdError) {
+            return res.status(400).json({
+                success: false,
+                message: pwdError
+            });
+        }
+
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found!'
+            });
+        }
+
+        user.password = await bcrypt.hash(newPassword, 10);
+        await user.save();
+
         return res.status(200).json({
             success: true,
-            message: 'Password reset endpoint ready for implementation.'
+            message: 'Password reset successfully.'
         });
     } catch (error) {
         next(error);

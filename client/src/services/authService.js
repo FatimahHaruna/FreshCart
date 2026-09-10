@@ -8,6 +8,10 @@ export const loginUser = async (userData) => {
     const response = await api.post('/login', userData);
     return response.data;
 };
+export const resetPassword = async (userData) => {
+    const response = await api.post('/reset-password', userData);
+    return response.data;
+};
 export const getUserProfile = async () => {
     const response = await api.get('/profile');
     return response.data;

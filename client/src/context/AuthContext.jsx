@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { registerUser, loginUser, getUserProfile } from "../services/authService";
+import {
+  registerUser,
+  loginUser,
+  resetPassword as resetPasswordRequest,
+  getUserProfile,
+} from "../services/authService";
 import { AuthContext } from "./authContext";
 
 export const AuthProvider = ({ children }) => {
@@ -48,6 +53,10 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
+  const resetPassword = async (userData) => {
+    return resetPasswordRequest(userData);
+  };
+
   const logout = () => {
     localStorage.removeItem("token");
     setUser(null);
@@ -60,6 +69,7 @@ export const AuthProvider = ({ children }) => {
         loading,
         login,
         register,
+        resetPassword,
         logout,
         isAuthenticated: Boolean(user),
       }}

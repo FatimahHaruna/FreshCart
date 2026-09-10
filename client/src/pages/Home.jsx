@@ -5,7 +5,7 @@ import ProductCard from "../components/ProductCard";
 import CategoryCard from "../components/CategoryCard";
 import Loading from "../components/Loading";
 
-import { getProducts } from "../services/productService";
+import { getAllProducts } from "../services/productService";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await getProducts();
+        const data = await getAllProducts();
 
         setProducts(data.products || data);
       } catch (error) {

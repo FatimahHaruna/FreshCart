@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getOrder } from "../services/orderService";
+import { getOrderById } from "../services/orderService";
 import { formatCurrency } from "../utils/formatCurrency";
 import Loading from "../components/Loading";
 
@@ -18,7 +18,7 @@ const OrderDetails = () => {
 
       try {
 
-        const data = await getOrder(id);
+        const data = await getOrderById(id);
 
         setOrder(data.order || data);
 

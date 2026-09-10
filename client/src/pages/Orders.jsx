@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { getOrders } from "../services/orderService";
+import { getMyOrders } from "../services/orderService";
 import { formatCurrency } from "../utils/formatCurrency";
 import Loading from "../components/Loading";
 
@@ -16,7 +16,7 @@ const Orders = () => {
 
       try {
 
-        const data = await getOrders();
+        const data = await getMyOrders();
 
         setOrders(data.orders || data);
 
