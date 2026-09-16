@@ -1,9 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+import { useCart } from '../context/CartContext' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser as faUserRegular } from '@fortawesome/free-regular-svg-icons';
 
 
 function Navbar() {
+    const { user, logout } = useAuth();
+    const { itemCount } = useCart();
+
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    }
     return (
         <header className='navbar'>
            <div className='navbar-container'>
@@ -21,10 +32,23 @@ function Navbar() {
                 <div className='navbar-actions'>
                     <Link to='/cart' className='cart-link'>
                        🛒 
+                       { itemCount > 0 && (
+                        <span className='cart-link'>{ itemCount }</span>
+                       )}
                     </Link>
-                    <Link to='/login'>
-                        <FontAwesomeIcon icon={faUserRegular} />
-                    </Link>
+                    
+                    { user ? (
+                        <>
+                            <span>Hello, {user.name}</span>
+                            <button onClick={ handleLogout }>Logout</button>
+                        </>
+                    ) : (
+                        <>
+                          <Link to='/login'>
+                            <FontAwesomeIcon icon={faUserRegular} />
+                          </Link>  
+                        </>
+                    )}
                 </div>
             </div> 
         </header>
