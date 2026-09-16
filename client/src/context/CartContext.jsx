@@ -1,7 +1,9 @@
-import { createContext, useCallback, useEffect, useState } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { getCart, addToCart, updateCart, removeFromCart, clearCart } from "../services/cartService";
 
 const CartContext = createContext();
+export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState({ items: [] });

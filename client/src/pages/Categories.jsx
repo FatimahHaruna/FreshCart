@@ -1,0 +1,2 @@
+import { CategoryTile, PageHeader, useCatalog } from "./PagePrimitives";
+export default function Categories() { const { categories } = useCatalog(); return <div className="page-wrap"><PageHeader eyebrow="Browse the harvest" title="All categories" copy="Everything you need for a fresher, healthier kitchen." /><div className="category-grid category-grid-large">{categories.map((category) => <CategoryTile key={category.name} category={category} />)}</div></div>; }

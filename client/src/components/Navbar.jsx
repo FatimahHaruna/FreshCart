@@ -1,8 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import { useCart } from '../context/CartContext' 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser as faUserRegular } from '@fortawesome/free-regular-svg-icons';
 
 
 function Navbar() {
@@ -44,9 +42,7 @@ function Navbar() {
                         </>
                     ) : (
                         <>
-                          <Link to='/login'>
-                            <FontAwesomeIcon icon={faUserRegular} />
-                          </Link>  
+                                                    <Link to='/login' aria-label="Sign in">◯</Link>
                         </>
                     )}
                 </div>
