@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import api from "../services/api";
 
-const configuredApiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/freshcart";
-const apiOrigin = configuredApiUrl.replace(/\/freshcart\/?$/, "");
-
 export const imageUrl = (image) => {
   if (!image) return "";
   if (image.startsWith("http")) return image;
   const imagePath = image.startsWith("/") ? image : `/${image}`;
-  return `${apiOrigin}${imagePath}`;
+  if (imagePath.startsWith("/products/")) {
+    return `/images${imagePath}`;
+  }
+  if (imagePath.startsWith("/categories/")) {
+    return `/images${imagePath}`;
+  }
+  return imagePath;
 };
 
 export const products = [
