@@ -2,3 +2,5 @@ node_modules/
 server/.env
 server/notes.txt
 freshcart.txt
+client/project-report.txt
+server/project-report.txt
