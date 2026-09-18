@@ -1,6 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -11,23 +12,12 @@ const errorHandler = require('./middlewares/errorMiddleware');
 
 const app = express();
 
-app.use((req, res, next) => {
-    const requestOrigin = req.headers.origin;
-
-    if (requestOrigin === 'http://localhost:5173' || requestOrigin === 'http://localhost:5174') {
-        res.setHeader('Access-Control-Allow-Origin', requestOrigin);
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
-    }
-
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(204);
-    }
-
-    next();
-});
+app.use(cors({
+    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+}));
 
 app.use('/products', express.static(path.join(__dirname, 'src/products')));
 app.use('/categories', express.static(path.join(__dirname, 'src/categories')));
