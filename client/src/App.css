@@ -793,6 +793,21 @@ button {
   color: var(--muted);
   margin-bottom: 25px;
 }
+.auth-card .form-error,
+.auth-card .form-success {
+  margin: 10px 0 15px;
+  font-size: 12px;
+}
+.auth-card .form-error {
+  color: #b33a32;
+}
+.auth-card .form-success {
+  color: var(--green);
+}
+.auth-card button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
 .forgot {
   display: block;
   color: var(--green);

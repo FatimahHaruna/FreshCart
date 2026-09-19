@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import mainImage from "../assets/main.jpg";
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const submit = async (event) => {
@@ -32,6 +33,7 @@ export default function Login() {
         <span className="eyebrow">Welcome back</span>
         <h1>Log in to FreshCart</h1>
         <p>Pick up where you left off.</p>
+        {location.state?.registered && <p className="form-success" role="status">Account created. Please log in.</p>}
         <label>
           Email
           <input
